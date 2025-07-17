@@ -1,8 +1,4 @@
 <launch>
-    <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_camera" 
-          args="0 0 0 0 0 0 1 world camera 1000"/>
-    <node pkg="tf" type="static_transform_publisher" name="camera_to_imu" 
-          args="0.194994 0.043407 -0.017824 0.495522 -0.505116 0.516000 -0.482764 camera imu 1000"/> -->
     <!-- ORB-SLAM3 -->
     <!-- <node name="orb_slam3_mono_inertial" pkg="orb_slam3_ros" type="orb_slam3_ros_mono_inertial" output="screen"> -->
     <node name="orb_slam3_mono" pkg="orb_slam3_ros" type="orb_slam3_ros_mono" output="screen">

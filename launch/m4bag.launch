@@ -1,18 +1,14 @@
 <launch>
-    <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_camera" 
-          args="0 0 0 0 0 0 1 world camera 1000"/>
-    <node pkg="tf" type="static_transform_publisher" name="camera_to_imu" 
-          args="0.194994 0.043407 -0.017824 0.495522 -0.505116 0.516000 -0.482764 camera imu 1000"/> -->
     <!-- ORB-SLAM3 -->
+    <node name="orb_slam3_mono" pkg="orb_slam3_ros" type="orb_slam3_ros_mono" output="screen">
     <!-- <node name="orb_slam3_mono_inertial" pkg="orb_slam3_ros" type="orb_slam3_ros_mono_inertial" output="screen"> -->
-    <node name="orb_slam3_mono_inertial" pkg="orb_slam3_ros" type="orb_slam3_ros_mono_inertial" output="screen">
         <!-- for EuRoC dataset -->
-        <remap to="/cmu_rc7/camera_1/image_raw"         from="/camera/image_raw"/>
-        <remap to="/cmu_rc7/imu/data"                  from="/imu"/>
+        <remap from="/camera/image_raw"         to="/camera/1/image_raw"/>
+        <remap from="/imu"                      to="/imu/0/data_raw"/>
 
         <!-- Parameters for original ORB-SLAM3 -->
         <param name="voc_file"      type="string"   value="$(find orb_slam3_ros)/ORB_SLAM3/Vocabulary/ORBvoc.txt" />
-        <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/subt_handheld1.yaml" />
+        <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag.yaml" />
 
         <!-- Parameters for ROS -->
         <param name="world_frame_id"    type="string"   value="world" />
