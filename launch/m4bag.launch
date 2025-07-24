@@ -1,7 +1,7 @@
 <launch>
     <!-- ORB-SLAM3 -->
-    <node name="orb_slam3_mono" pkg="orb_slam3_ros" type="orb_slam3_ros_mono" output="screen">
-    <!-- <node name="orb_slam3_mono_inertial" pkg="orb_slam3_ros" type="orb_slam3_ros_mono_inertial" output="screen"> -->
+    <!-- <node name="orb_slam3_mono" pkg="orb_slam3_ros" type="orb_slam3_ros_mono" output="screen"> -->
+    <node name="orb_slam3_mono_inertial" pkg="orb_slam3_ros" type="orb_slam3_ros_mono_inertial" output="screen">
         <!-- for EuRoC dataset -->
         <remap from="/camera/image_raw"         to="/camera/1/image_raw"/>
         <remap from="/imu"                      to="/imu/0/data_raw"/>
@@ -9,6 +9,7 @@
         <!-- Parameters for original ORB-SLAM3 -->
         <param name="voc_file"      type="string"   value="$(find orb_slam3_ros)/ORB_SLAM3/Vocabulary/ORBvoc.txt" />
         <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag.yaml" />
+        <!-- <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag_metro_20240820.yaml" /> -->
 
         <!-- Parameters for ROS -->
         <param name="world_frame_id"    type="string"   value="world" />
