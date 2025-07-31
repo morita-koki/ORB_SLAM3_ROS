@@ -8,8 +8,8 @@
 
         <!-- Parameters for original ORB-SLAM3 -->
         <param name="voc_file"      type="string"   value="$(find orb_slam3_ros)/ORB_SLAM3/Vocabulary/ORBvoc.txt" />
-        <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag.yaml" />
-        <!-- <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag_metro_20240820.yaml" /> -->
+        <!-- <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag.yaml" /> -->
+        <param name="settings_file" type="string"   value="$(find orb_slam3_ros)/config/m4bag_metro_20240820.yaml" />
 
         <!-- Parameters for ROS -->
         <param name="world_frame_id"    type="string"   value="world" />
