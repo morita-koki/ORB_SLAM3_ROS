@@ -21,10 +21,15 @@ Camera.type: "PinHole"
 
 # Camera calibration and distortion parameters (OpenCV) 
 # /camera/1
-Camera1.fx: 2409.63226
-Camera1.fy: 2405.24351
-Camera1.cx: 2041.88704
-Camera1.cy: 1056.17548
+# Camera1.fx: 2409.63226
+# Camera1.fy: 2405.24351
+# Camera1.cx: 2041.88704
+# Camera1.cy: 1056.17548
+
+Camera1.fx: 602.408065
+Camera1.fy: 601.3108775
+Camera1.cx: 510.47176
+Camera1.cy: 264.04387
 
 Camera1.k1: -0.113106
 Camera1.k2: 0.016971
@@ -44,11 +49,14 @@ Camera1.k3: -0.002251
 # Camera2.p2: -0.000257
 # Camera2.k3: -0.012023
 
-Camera.width: 4096
-Camera.height: 2160
+# Camera.width: 4096
+# Camera.height: 2160
+
+Camera.width: 1024
+Camera.height: 540
 
 # Camera frames per second 
-Camera.fps: 20
+Camera.fps: 10
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
@@ -69,10 +77,10 @@ IMU.T_b_c1: !!opencv-matrix
   rows: 4
   cols: 4
   dt: f
-  data: [0.0148655429818, -0.999880929698, 0.00414029679422, -0.0216401454975,
-         0.999557249008, 0.0149672133247, 0.025715529948, -0.064676986768,
-         -0.0257744366974, 0.00375618835797, 0.999660727178, 0.00981073058949,
-         0.0, 0.0, 0.0, 1.0]
+  data: [-0.0055044 ,  0.99998445,  0.00050063, -0.0997688 ,
+         -0.008997  , -0.00055014,  0.99995975,  0.26515038,
+          0.99994475,  0.00549967,  0.00899988, -0.10911404,
+          0.        ,  0.        ,  0.        ,  1.        ]
 
 # IMU noise
 IMU.NoiseGyro: 1.7e-04 # 1.6968e-04
@@ -86,7 +94,7 @@ IMU.Frequency: 200.0
 #--------------------------------------------------------------------------------------------
 
 # ORB Extractor: Number of features per image
-ORBextractor.nFeatures: 3000
+ORBextractor.nFeatures: 3500
 
 # ORB Extractor: Scale factor between levels in the scale pyramid 	
 ORBextractor.scaleFactor: 1.2
@@ -99,7 +107,7 @@ ORBextractor.nLevels: 8
 # Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
 # You can lower these values if your images have low contrast			
 ORBextractor.iniThFAST: 20
-ORBextractor.minThFAST: 7
+ORBextractor.minThFAST: 5
 
 #--------------------------------------------------------------------------------------------
 # Viewer Parameters
